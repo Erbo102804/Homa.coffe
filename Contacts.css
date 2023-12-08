@@ -1,0 +1,221 @@
+/* Общие стили */
+* {
+    margin: 0;
+}
+
+/* Фоновое видео */
+.bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+/* Контейнер */
+.container {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Центрирование контента по центру */
+    width: 85%;
+    height: 85%;
+    padding: 20px 8%;
+    animation-name: show;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    color: #fff;
+}
+
+/* Меню */
+.menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.menu-button {
+    background: #FF4E50;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-button:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Стили для выпадающего меню */
+.menu-list {
+    list-style: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    display: none;
+    flex-direction: column;
+    z-index: 3;
+}
+
+.menu-button:hover + .menu-list,
+.menu-list:hover {
+    display: flex;
+}
+
+.menu-list li {
+    padding: 10px 0;
+}
+
+.menu-list a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.menu-list a:hover {
+    color: #FF4E50;
+}
+
+/* Навигация */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 40px;
+}
+
+nav ul li a {
+    padding: 15px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 23px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: black;
+}
+
+/* Текстовый оверлей */
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 5px;
+    width: 70%; /* Добавлено */
+    max-width: 400px; /* Добавлено */
+    margin: 0 auto; /* Добавлено */
+}
+
+.overlay-heading {
+    font-size: 2.5rem;
+}
+
+.overlay-paragraph {
+    font-size: 1.5rem;
+}
+
+/* Адаптивные стили для экранов шириной до 600px */
+@media screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        align-items: center; /* Центрирование контента по центру */
+    }
+
+    .menu {
+        top: 10px;
+        right: 10px;
+    }
+
+    .menu-button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .menu-list {
+        top: 30px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    nav ul li a {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .text-overlay {
+        width: 90%;
+        max-width: none;
+    }
+
+    .overlay-heading {
+        font-size: 2rem;
+    }
+
+    .overlay-paragraph {
+        font-size: 1.2rem;
+    }
+}
+
+/* Дополнительная адаптация для узких мобильных устройств (ширина до 480px) */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 8px;
+    }
+
+    .menu-list {
+        top: 50px;
+    }
+
+    .overlay-heading {
+        font-size: 1.5rem;
+    }
+
+    .overlay-paragraph {
+        font-size: 1rem;
+    }
+}

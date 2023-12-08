@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.container {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    height: 85%;
+    padding: 20px 8%;
+    animation-name: show;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    color: #fff;
+}
+
+.container .header-main {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10rem;
+    text-transform: uppercase;
+    background: repeating-linear-gradient(white, white 2px, transparent 2px, transparent 4px);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.container .header-second {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.container svg {
+    width: 64px;
+    height: 64px;
+    fill: #fff;
+}
+
+.container svg:hover {
+    fill: #000;
+}
+
+.menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-button:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+.menu-list {
+    list-style: none;
+    position: relative;
+    background-color: #fff;
+    padding: 10px;
+    left: 100%;
+    top: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    display: none;
+    flex-direction: column;
+    z-index: 3;
+}
+
+.menu-button:hover + .menu-list,
+.menu-list:hover {
+    display: flex;
+}
+
+.menu-list li {
+    padding: 10px 0;
+}
+
+.menu-list a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.menu-list a:hover {
+    color: aqua;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 40px;
+}
+
+nav ul li a {
+    padding: 15px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 23px;
+    transition:5s;
+}
+
+nav ul li a:hover {
+    color: black;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.overlay-heading {
+    font-size: 2.5rem;
+}
+
+.overlay-paragraph {
+    font-size: 1.5rem;
+}
+
+/* Адаптивность для мобильных устройств */
+@media screen and (max-width: 768px) {
+    .container .header-main {
+        font-size: 6rem;
+    }
+
+    .container .header-second {
+        font-size: 1.5rem;
+    }
+    
+    .menu ul li {
+        margin-left: 20px;
+    }
+
+    .menu-list {
+        top: 40px;
+    }
+}
+
+/* Дополнительная адаптивность для узких мобильных устройств */
+@media screen and (max-width: 480px) {
+    .container .header-main {
+        font-size: 4rem;
+    }
+
+    .container .header-second {
+        font-size: 1rem;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+}
